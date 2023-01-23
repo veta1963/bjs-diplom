@@ -1,20 +1,19 @@
 'use strict'
-class UserForm {
-   constructor () {
-     this.userform = new UserForm();
-   } 
-   loginFormCallback(data) {
-       const data = [login, password];
-       if (data !== ApiConnector.login) {
-           alert ("Неверный логин или пароль.");
-       } else {
-           alert ("Успешно");
-       }
-}
+
+const userform = new UserForm();
+
+userForm.loginFormCallback = data => console.log(data);
+
+data = {login, password}; 
+
+ApiConnector.login({login, password}, response => console.log(response));
+
+location.reload();
 
 
-}
 
+userForm.registerFormCallback = data => console.log(data);
 
+location.reload();
 
 
