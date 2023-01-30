@@ -2,22 +2,25 @@
 
 const userform = new UserForm();
 
-userform.onclick = () => userform.loginFormCallback ((data) => {
+this.loginFormCallback = data => {
 
-    ApiConnector.login({data}, response => {
+    ApiConnector.login(data, response => {
 
-        if (response === false) {
+       console.log(response);
+        /* if (response === false) {
             alert ("Ошибка авторизации");
-        } else location.reload();
+        } if {
+            location.reload();
+        };*/
     });
-});
+};
 
 
 
 
 
-userForm.registerFormCallback = data => console.log(data);
+/*this.registerFormCallback = data => console.log(data);
 
-location.reload();
+location.reload();*/
 
 
