@@ -2,16 +2,13 @@
 
 const userform = new UserForm();
 
-this.loginFormCallback = data => {
-
+userform.loginFormCallback = data => {
     ApiConnector.login(data, response => {
-
-       console.log(response);
-        /* if (response === false) {
-            alert ("Ошибка авторизации");
-        } if {
+        if (success === false) {
+            return error;
+        } else {
             location.reload();
-        };*/
+        };
     });
 };
 
@@ -19,7 +16,7 @@ this.loginFormCallback = data => {
 
 
 
-/*this.registerFormCallback = data => console.log(data);
+/*userform.registerFormCallback = data => console.log(data);
 
 location.reload();*/
 
