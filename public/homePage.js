@@ -1,5 +1,3 @@
-
-
 const logout = new LogoutButton();
 logout.action = function() {
     ApiConnector.logout(function(response){
