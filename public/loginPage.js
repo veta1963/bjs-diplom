@@ -1,24 +1,26 @@
 'use strict'
 
-const userform = new UserForm();
-
-userform.loginFormCallback = data => {
-    ApiConnector.login(data, response => {
-        const success;
-        if (success === false) {
-            return;
-        } else {
+const login = new UserForm();
+login.loginFormCallback = function(data){
+    ApiConnector.login(data, (response) => {
+        console.log(response);
+        if (response.success) {
             location.reload();
-        };
+        } else {
+            login.setLoginErrorMessage(response.data);
+        }
     });
-};
+} 
 
 
-
-
-
-/*userform.registerFormCallback = data => console.log(data);
-
-location.reload();*/
-
+login.registerFormCallback = function(data){
+    ApiConnector.register(data, (response) =>{
+        console.log(response);
+        if (response.success) {
+            location.reload();
+        } else {
+            login.setLoginErrorMessage(response.data);
+        }
+    });
+}
 
